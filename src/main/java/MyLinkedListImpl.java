@@ -1,9 +1,10 @@
-public class MyLinkedListListImpl<E> implements MyLinkedList<E> {
+public class MyLinkedListImpl<E> implements MyLinkedList<E> {
+
     private Node<E> firstNode;
     private Node<E> lastNode;
     private int size = 0;
 
-    public MyLinkedListListImpl() {
+    public MyLinkedListImpl() {
         lastNode = new Node<E>(null, firstNode, null);
         firstNode = new Node<E>(null, null, lastNode);
     }
@@ -25,6 +26,8 @@ public class MyLinkedListListImpl<E> implements MyLinkedList<E> {
         next.setPrevElement(firstNode);
         size++;
     }
+
+
 
     @Override
     public int size() {

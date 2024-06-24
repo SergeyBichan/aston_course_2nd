@@ -1,6 +1,6 @@
 public class Runner {
     public static void main(String[] args) throws Exception {
-        MyLinkedList<String> linkedList = new MyLinkedListListImpl<>();
+        MyLinkedList<String> linkedList = new MyLinkedListImpl<>();
         linkedList.addLast("abc");
         linkedList.addLast("adas");
         linkedList.addLast("absac");
