@@ -19,17 +19,33 @@ public class MyLinkedListListImpl<E> implements MyLinkedList<E> {
 
     @Override
     public void addFirst(E e) {
-
+        Node<E> next = firstNode;
+        next.setCurrentElement(e);
+        firstNode = new Node<>(null,null,firstNode);
+        next.setPrevElement(firstNode);
+        size++;
     }
 
     @Override
     public int size() {
-        return 0;
+        return this.size;
     }
 
     @Override
     public E getElementByIndex(int counter) {
-        return null;
+        Node<E> target = firstNode.getNextElement();
+        try {
+            for (int i = 0; i < counter; i++) {
+                target = getNextElement(target);
+            }
+        } catch (NullPointerException e) {
+            System.out.println("Index: " + counter + " doesn't exists! Size is " + size);
+        }
+        return target.getCurrentElement();
+    }
+
+    private Node<E> getNextElement(Node<E> current) {
+        return current.getNextElement();
     }
 
     private class Node<E> {
