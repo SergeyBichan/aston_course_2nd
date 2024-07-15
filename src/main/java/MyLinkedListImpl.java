@@ -41,7 +41,7 @@ public class MyLinkedListImpl<E> implements MyLinkedList<E> {
             for (int i = 0; i < counter; i++) {
                 target = getNextElement(target);
             }
-        } catch (NullPointerException e) {
+        } catch (Exception e) {
             System.out.println("Index: " + counter + " doesn't exists! Size is " + size);
         }
         return target.getCurrentElement();
